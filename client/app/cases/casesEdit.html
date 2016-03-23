@@ -1,15 +1,31 @@
 <form>
   <div class="form-group">
-    <label for="exampleInputEmail1">Name</label>
+    <label for="name">Name</label>
     <input type="text" class="form-control"  placeholder="Name"  ng-model="case.name">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Info</label>
+    <label for="info">Info</label>
     <input type="text" class="form-control" placeholder="Info"  ng-model="case.info">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" class="form-control" placeholder="Description"  ng-model="case.description">
+  </div>
+  <div class="form-group">
+    <label for="description">Case Owner</label>
+    <input type="text" class="form-control" placeholder="Case Owner"  ng-model="case.caseOwner">
+  </div>
+  <div class="form-group">
+    <label for="description">Case Number</label>
+    <input type="text" class="form-control" placeholder="Case Number"  ng-model="case.caseNumber">
+  </div>
+  <div class="form-group">
+    <label for="description">Client Name</label>
+    <input type="text" class="form-control" placeholder="Client Name"  ng-model="case.clientName">
   </div>
   <div class="checkbox">
     <label>
-      <input type="checkbox" ng-model="case. active"> Active
+      <input type="checkbox" ng-model="case.active"> Active
     </label>
   </div>
   <button type="submit" class="btn btn-default" ng-click="save()">Submit</button>

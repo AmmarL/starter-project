@@ -2,13 +2,19 @@
 
 angular.module('fullstackApp')
   .controller('CasesCtrl', function ($scope , $state , CasesResource) {
-    $scope.message = 'Hello';
 
+      //This is how we are getting data from resource,
+      // you need to execute query method on resource to get list of all data
     CasesResource.query().$promise.then(function (response) {
         $scope.cases = response;
     });
-    
+
     $scope.newCase = function(){
         $state.go('cases.new');
     };
+
+    $scope.editCase = function(caseId){
+        $state.go('cases.edit', {id: caseId});
+    };
+
   });
