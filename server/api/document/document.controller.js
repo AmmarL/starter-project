@@ -13,7 +13,7 @@ exports.index = function(req, res) {
 
 // Get a single document
 exports.show = function(req, res) {
-  Document.findById(req.params.id, function (err, document) {
+  Document.findById(req.params.id).populate('case').exec( function (err, document) {
     if(err) { return handleError(res, err); }
     if(!document) { return res.status(404).send('Not Found'); }
     return res.json(document);

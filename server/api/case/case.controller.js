@@ -5,7 +5,7 @@ var Case = require('./case.model');
 
 // Get list of items
 exports.index = function(req, res) {
-  Case.find(function (err, items) {
+  Case.find().populate('documents').exec( function (err, items) {
     if(err) { return handleError(res, err); }
     return res.status(200).json(items);
   });
@@ -13,11 +13,11 @@ exports.index = function(req, res) {
 
 // Get a single item
 exports.show = function(req, res) {
-  Case.findById(req.params.id, function (err, item) {
-    if(err) { return handleError(res, err); }
-    if(!item) { return res.status(404).send('Not Found'); }
-    return res.json(item);
-  });
+  Case.findById(req.params.id).populate('documents').exec( function (err, item) {
+  if(err) { return handleError(res, err); }
+  if(!item) { return res.status(404).send('Not Found'); }
+  return res.json(item);
+});
 };
 
 // Creates a new item in the DB.

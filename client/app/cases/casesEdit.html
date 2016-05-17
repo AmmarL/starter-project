@@ -23,6 +23,15 @@
     <label for="description">Client Name</label>
     <input type="text" class="form-control" placeholder="Client Name"  ng-model="case.clientName">
   </div>
+  <div class="form-group">
+      <label for="documents">Documents</label>
+      <ul>
+          <li ng-repeat="document in case.documents">
+              <span>{{document.name}}</span>
+          </li>
+      </ul>
+      <button type="submit" class="btn btn-default" ng-click="addDocument()">Add Document</button>
+  </div>
   <div class="checkbox">
     <label>
       <input type="checkbox" ng-model="case.active"> Active

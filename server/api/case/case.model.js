@@ -12,7 +12,7 @@ var CaseSchema = new Schema({
   caseNumber: Number,
   caseOwner: String,
   clientName: String,
-  documents: [{type: mongoose.Schema.Types.ObjectId , ref: 'Document'}]
+  documents: [ {type: mongoose.Schema.Types.ObjectId , ref: 'Document'} ]
 }, {autoIndex:true});
 
 module.exports = mongoose.model('Case', CaseSchema);

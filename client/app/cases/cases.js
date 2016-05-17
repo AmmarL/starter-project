@@ -21,6 +21,10 @@ angular.module('fullstackApp')
         url: '/:id/edit',
         controller: 'CasesEditCtrl',
         templateUrl: 'app/cases/casesEdit.html'
+    }).state('cases.addDoc', {
+        url: '/:caseId/add-document',
+        controller: 'DocumentEditCtrl',
+        templateUrl: 'app/document/documentedit.html'
     });
 
   });

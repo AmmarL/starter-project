@@ -11,6 +11,7 @@ angular.module('fullstackApp')
     }
 
     $scope.save = function(){
+        $scope.document.case = $stateParams.caseId;
         DocumentsResource.save($scope.document).$promise.then(function(response){
             $scope.document = response;
         });
